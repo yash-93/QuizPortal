@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<title>Time Up</title>
+	<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="css/this.css"/>
+	
+	 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+
+</head>
+
+<body>
+	<div class="row">
+		<div class="col s12 ty">
+			<div class="col s7 m7 dabba">
+    <h2 class="header">Time Up! Thank You!</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img height="400" width="400" src="logo.png">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p id="sco"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+            
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		var firstMember = (localStorage.getItem("firstMember"));
+		var secondMember = (localStorage.getItem("secondMember"));
+		var phone = (localStorage.getItem("phone"));
+		var email = (localStorage.getItem("email"));
+		var response = JSON.parse(localStorage.getItem("response"));
+    	var answers = JSON.parse(localStorage.getItem("answers"));	
+
+    	var score = 0;
+
+    	$( answers ).each(function( index ) {
+		  if(response[index] == answers[index]){
+		  	score++;
+		  }
+		});
+
+		$('#btn').on('click', function(){
+    		alert(firstMember +":"+ secondMember +":"+ phone +":"+ email +":"+ response +":"+ answers);
+		});
+		document.getElementById("sco").innerHTML = "Your Score is "+score;
+
+		$.post("util.php",
+	    {
+	        firstMember: firstMember,
+	        secondMember: secondMember,
+	        number: phone,
+	        score: score
+	    });
+
+	</script>
+</body>
+</html>

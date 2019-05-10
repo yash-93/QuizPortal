@@ -1,0 +1,15 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.form {
+	width: 50%;
+	height: 50%;
+	margin-top: 7%;
+	padding: 25px;
+}
+.header{
+	font-size: 30px;
+	font-weight: bold;
+}

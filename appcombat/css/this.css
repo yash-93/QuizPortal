@@ -1,0 +1,33 @@
+body{
+	font-family: 'Roboto Slab', serif;
+	background: #06090a;
+}
+.mapt{
+	text-align: center;
+	border-width: 2px;
+}
+
+.dabba{
+	margin-left:300px !important;
+}
+.maptd{
+	background: #9D9D92;
+	padding: 10px;
+	border-radius: 5px;
+}
+.header{
+	color: white;
+}
+.card-content{
+	margin: 150px 0px;
+	font-size: 30px;
+}
+
+.card{
+	background:#3856A9;
+	color: white;
+
+}
+h2{
+	text-align: center !important;
+}
